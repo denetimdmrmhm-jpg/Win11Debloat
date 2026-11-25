@@ -65,4 +65,35 @@ Describe 'Update-MainWindowPerformanceDisplay' {
         $window.FindName('MemoryUsageText').Text | Should -Be 'PerformanceUnavailable'
         $window.FindName('MemoryUsageBar').Value | Should -Be 0
     }
+
+    It 'keeps CPU data visible when memory data is unavailable' {
+        Mock Get-SystemPerformanceSnapshot {
+            [PSCustomObject]@{
+                CPUPercent = 18
+                MemoryUsedPercent = $null
+                MemoryUsedGB = $null
+                MemoryTotalGB = $null
+            }
+        }
+        $window = New-PerformanceTestWindow
+
+        Update-MainWindowPerformanceDisplay -Window $window
+
+        $window.FindName('CpuUsageText').Text | Should -BeLike '*18*%'
+        $window.FindName('CpuUsageBar').Value | Should -Be 18
+        $window.FindName('MemoryUsageText').Text | Should -Be 'PerformanceUnavailable'
+        $window.FindName('MemoryUsageBar').Value | Should -Be 0
+    }
+
+    It 'shows an unavailable timestamp when sampling throws' {
+        Mock Get-SystemPerformanceSnapshot { throw 'Synthetic provider failure' }
+        $window = New-PerformanceTestWindow
+
+        Update-MainWindowPerformanceDisplay -Window $window
+
+        $window.FindName('CpuUsageText').Text | Should -Be 'PerformanceUnavailable'
+        $window.FindName('MemoryUsageText').Text | Should -Be 'PerformanceUnavailable'
+        $window.FindName('PerformanceUpdatedText').Text | Should -Be 'PerformanceUnavailable'
+    }
+
 }
