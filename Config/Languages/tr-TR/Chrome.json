@@ -366,5 +366,13 @@
   "StartMenuWhatIfRemovedDefaultProfile": "[WhatIf] Varsayılan kullanıcı profili için start2.bin kaldırılırdı (değişiklik yapılmadı).",
   "StartMenuRemovedDefaultProfile": "Varsayılan kullanıcı profili için start2.bin kaldırıldı.",
   "StartMenuRemoveFailedDefaultProfile": "Varsayılan kullanıcı profili için start2.bin kaldırılamadı. {0}",
-  "StartMenuNoUserLocationsFound": "Kullanıcı Başlat menüsü konumu bulunamadı."
+  "StartMenuNoUserLocationsFound": "Kullanıcı Başlat menüsü konumu bulunamadı.",
+  "PerformanceTitle": "Canlı sistem performansı",
+  "PerformanceSubtitle": "Salt okunur CPU ve fiziksel bellek kullanımı. Her 3 saniyede otomatik güncellenir.",
+  "PerformanceCpuLabel": "İşlemci kullanımı",
+  "PerformanceMemoryLabel": "Bellek kullanımı",
+  "PerformanceWaiting": "Ölçülüyor...",
+  "PerformanceUnavailable": "Veri alınamadı",
+  "PerformanceUpdated": "Son güncelleme: {0}",
+  "PerformanceMemoryValue": "{0:N1} GB / {1:N1} GB (%{2:N0})"
 }
