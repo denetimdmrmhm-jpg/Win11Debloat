@@ -366,5 +366,13 @@
   "StartMenuWhatIfRemovedDefaultProfile": "[WhatIf] Removed start2.bin for the default user profile.",
   "StartMenuRemovedDefaultProfile": "Removed start2.bin for the default user profile.",
   "StartMenuRemoveFailedDefaultProfile": "Failed to remove start2.bin for the default user profile. {0}",
-  "StartMenuNoUserLocationsFound": "No user start menu locations were found."
+  "StartMenuNoUserLocationsFound": "No user start menu locations were found.",
+  "PerformanceTitle": "Live system performance",
+  "PerformanceSubtitle": "Read-only CPU and physical memory usage. Updates automatically every 3 seconds.",
+  "PerformanceCpuLabel": "CPU usage",
+  "PerformanceMemoryLabel": "Memory usage",
+  "PerformanceWaiting": "Reading...",
+  "PerformanceUnavailable": "Unavailable",
+  "PerformanceUpdated": "Last updated: {0}",
+  "PerformanceMemoryValue": "{0:N1} GB / {1:N1} GB ({2:N0}%)"
 }
