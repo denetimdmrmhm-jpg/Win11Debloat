@@ -16,6 +16,7 @@ Describe 'XAML UI contracts' {
         # Map receivers, not whole files: dialogs also look up controls on their owners.
         $receiverSchemas = @{
             'Show-MainWindow.ps1' = @{ window = 'MainWindow.xaml' }
+            'Update-MainWindowPerformanceDisplay.ps1' = @{ window = 'MainWindow.xaml' }
             'MainWindow-AppSelection.ps1' = @{ window = 'MainWindow.xaml'; w = 'MainWindow.xaml' }
             'MainWindow-Deployment.ps1' = @{ window = 'MainWindow.xaml' }
             'MainWindow-Localization.ps1' = @{ window = 'MainWindow.xaml' }
