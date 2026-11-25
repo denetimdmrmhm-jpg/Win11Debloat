@@ -52,5 +52,8 @@ function Update-MainWindowPerformanceDisplay {
         $memoryUsageBar.Value = 0
         $cpuValueText.Text = Get-Translation -Key 'PerformanceUnavailable'
         $memoryValueText.Text = Get-Translation -Key 'PerformanceUnavailable'
+        if ($updatedText) {
+            $updatedText.Text = Get-Translation -Key 'PerformanceUnavailable'
+        }
     }
 }
