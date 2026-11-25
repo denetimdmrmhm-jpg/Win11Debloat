@@ -904,6 +904,12 @@ function Show-MainWindow {
     })
 
     $window.Show() | Out-Null
+    Update-MainWindowPerformanceDisplay -Window $window
+    $performanceTimer = [System.Windows.Threading.DispatcherTimer]::new()
+    $performanceTimer.Interval = [TimeSpan]::FromSeconds(3)
+    $performanceTimer.Add_Tick({ Update-MainWindowPerformanceDisplay -Window $window })
+    $performanceTimer.Start()
+
     $themeTimer = [System.Windows.Threading.DispatcherTimer]::new()
     $themeTimer.Interval = [TimeSpan]::FromSeconds(2)
     $themeTimer.Add_Tick({ Update-AutoThemeResources -Window $window })
@@ -919,6 +925,7 @@ function Show-MainWindow {
     try { [System.Windows.Threading.Dispatcher]::PushFrame($frame) }
     finally {
         $themeTimer.Stop()
+        $performanceTimer.Stop()
         [System.Windows.Threading.Dispatcher]::CurrentDispatcher.Remove_UnhandledException($dispatcherErrorHandler)
         if ($script:BubblePopup) { $script:BubblePopup.IsOpen = $false }
     }
