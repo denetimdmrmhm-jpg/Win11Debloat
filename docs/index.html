@@ -11,7 +11,7 @@ main{max-width:980px;margin:40px auto;padding:0 20px}.top{display:flex;justify-c
 h1{font-size:clamp(25px,4vw,36px);margin:0}h2{font-size:18px;margin:0 0 16px}
 .muted{color:var(--muted)}.tag{border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:var(--yellow);font-size:13px}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;margin-top:18px}
-.big{font-size:48px;font-weight:750;letter-spacing:-2px}.bar{height:12px;background:#30363d;border-radius:20px;overflow:hidden;margin:10px 0 5px}.fill{height:100%;width:18%;background:var(--blue);border-radius:20px}
+.big{font-size:48px;font-weight:750;letter-spacing:-2px}.bar{height:12px;background:#30363d;border-radius:20px;overflow:hidden;margin:10px 0 5px}.fill{height:100%;width:24%;background:var(--blue);border-radius:20px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
 .item{padding:14px;border:1px solid var(--line);border-radius:9px}.item strong{display:block;margin-bottom:5px}
 .state{font-size:12px;font-weight:650}.done{color:var(--green)}.working{color:var(--blue)}.pending{color:var(--muted)}
@@ -20,9 +20,9 @@ footer{margin:24px 0;color:var(--muted);font-size:13px}
 </style>
 </head>
 <body><main>
-<div class="top"><div><div class="muted">DENETIMDMrmhm-jpg / Win11Debloat</div><h1>Geliştirme Durumu</h1></div><span class="tag">ANALİZ AŞAMASI</span></div>
+<div class="top"><div><div class="muted">DENETIMDMrmhm-jpg / Win11Debloat</div><h1>Geliştirme Durumu</h1></div><span class="tag">KAYNAK + CI GELİŞTİRMESİ</span></div>
 <section class="panel">
-<div class="muted">Genel ilerleme · tahmini</div><div class="big">18%</div>
+<div class="muted">Genel ilerleme · tahmini</div><div class="big">24%</div>
 <div class="bar"><div class="fill"></div></div>
 <div class="muted">Bu oran, tamamlanan iş kalemlerine ilişkin geçici takip değeridir. Otomatik ölçüm değildir.</div>
 </section>
@@ -30,12 +30,14 @@ footer{margin:24px 0;color:var(--muted);font-size:13px}
 <div class="item"><strong>GitHub erişimi ve development dalı</strong><span class="state done">TAMAMLANDI</span></div>
 <div class="item"><strong>Kaynak dosya envanteri</strong><span class="state done">TAMAMLANDI</span></div>
 <div class="item"><strong>Ana WPF arayüzü incelemesi</strong><span class="state done">İLK İNCELEME TAMAMLANDI</span></div>
-<div class="item"><strong>Güvenlik ve geri alma kodu</strong><span class="state working">İNCELEME SÜRÜYOR</span></div>
+<div class="item"><strong>Yedekleme ve geri yükleme güvenlik incelemesi</strong><span class="state done">İLK KOD İNCELEMESİ TAMAMLANDI</span></div>
+<div class="item"><strong>Development CI tetikleyicisi</strong><span class="state done">GÜNCELLENDİ</span></div>
 <div class="item"><strong>CPU/RAM izleme gereksinimleri</strong><span class="state pending">BEKLİYOR</span></div>
 <div class="item"><strong>Yeni geliştirme ve testler</strong><span class="state pending">BEKLİYOR</span></div>
 </div></section>
-<section class="panel"><h2>Sonraki işlem</h2><p>Registry yedekleme/geri yükleme kodunu ve mevcut test kapsamını incelemek. Henüz kaynak kodunda değişiklik veya yeni commit yapılmadı.</p>
+<section class="panel"><h2>Sonraki işlem</h2><p>Geri yükleme doğrulaması ve test kapsamı incelendi. CI artık development dalına yapılan push işlemlerinde de tetiklenecek. İlk CI çalışmasının sonucu henüz doğrulanmadı.</p>
+<p><strong>CI durumu:</strong> <a href="https://github.com/denetimdmrmhm-jpg/Win11Debloat/actions/workflows/tests.yml"><img alt="Development CI status" src="https://github.com/denetimdmrmhm-jpg/Win11Debloat/actions/workflows/tests.yml/badge.svg?branch=development"></a> <a href="https://github.com/denetimdmrmhm-jpg/Win11Debloat/actions">Çalışma geçmişi</a></p>
 <p class="muted">Çalışma dalı: <strong>development</strong> · Ana proje: <a href="https://github.com/Raphire/Win11Debloat">Raphire/Win11Debloat</a></p>
 </section>
-<footer>Bu panel, çalışma sırasında doğrulanan sonuçlarla elle güncellenir. Arka planda kendiliğinden yenilenmez. Son güncelleme: 25 Kasım 2026.</footer>
+<footer>İlerleme yüzdesi geçici çalışma tahminidir. CI rozeti GitHub Actions sonucunu dinamik gösterir; diğer iş kalemleri doğrulanmış çalışmalarla güncellenir. Son güncelleme: 25 Kasım 2026.</footer>
 </main></body></html>
